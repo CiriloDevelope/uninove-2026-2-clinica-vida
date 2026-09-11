@@ -32,6 +32,47 @@ nav a {
     color: #FFFFFF; text-decoration: none; font-weight: 600; 
 }
 
+/* O Estilo CSS */
+.botao-link {
+  /* Transforma o link em um bloco para aceitar altura e largura corretas */
+  display: inline-block; 
+  justify-content: center;
+  margin: auto;
+  align-items: center;
+  
+  /* Cores e Fundo */
+  background-color: #1F2A30; /* Azul moderno */
+  color: #ffffff;            /* Texto branco */
+  
+  /* Espaçamento interno (tamanho do botão) */
+  padding: 12px 24px;
+  
+  /* Remove a linha sublinhada padrão do link */
+  text-decoration: none;
+  
+  /* Arredonda os cantos */
+  border-radius: 6px;
+  
+  /* Estilo do texto */
+  font-family: sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  
+  /* Efeito suave ao passar o mouse */
+  transition: background-color 0.2s ease;
+}
+
+/* Efeito ao passar o mouse por cima (Hover) */
+.botao-link:hover {
+  background-color: #0B6E75; /* Azul um pouco mais escuro */
+}
+
+/* Efeito ao clicar no botão (Active) */
+.botao-link:active {
+  transform: scale(0.98); /* Dá um leve efeito de clique */
+}
+
+
 .lista-especialidades {        /* o contêiner: decide o arranjo do conjunto */
   display: flex;
   flex-wrap: wrap;             /* deixa a fileira quebrar em tela estreita  */
@@ -63,4 +104,25 @@ footer {
   color: #FFFFFF;
   padding: 24px 32px;
   margin-top: 40px;
+}
+
+.form-grid {                 /* base: o celular, uma coluna */
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px 24px;
+}
+
+.campo { display: flex; flex-direction: column; gap: 6px; }
+.campo-largo { grid-column: 1 / -1; }   /* ocupa a linha inteira */
+
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus { outline: 3px solid #C84B31; }
+
+@media (min-width: 640px) {
+  .form-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1024px) {
+  .form-grid { grid-template-columns: repeat(3, 1fr); }
 }
